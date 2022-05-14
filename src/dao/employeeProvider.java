@@ -4,11 +4,11 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class employeeProvider {
+public class EmployeeProvider {
 
 	private static Connection conn;
 
-	private employeeProvider() {}
+	private EmployeeProvider() {}
 
 	public static Connection getInstance() {
 		try {

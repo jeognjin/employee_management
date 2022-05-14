@@ -1,5 +1,5 @@
 package service;
 
-public interface employeeService {
+public interface EmployeeService {
 
 }

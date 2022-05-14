@@ -1,5 +1,5 @@
 package dao;
 
-public class employeeImpl {
+public class EmployeeImpl {
 
 }

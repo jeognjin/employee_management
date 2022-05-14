@@ -1,5 +1,5 @@
 package service;
 
-public class employeeServiceImpl {
+public class EmployeeServiceImpl {
 
 }
