@@ -16,6 +16,8 @@ public class EmployeeManagementEx {
 		boolean run = true;
 		Employee emp = null;
 		Manager manager = null;
+		String id = "";
+		String password = "";
 		int result = 0;
 		
 		while(run) {
@@ -31,6 +33,18 @@ public class EmployeeManagementEx {
 			
 			switch (select) {
 			case 1:
+				System.out.println("ID 입력 >>> ");
+				id = sc.nextLine();
+				System.out.println("password 입력 >>> ");
+				password = sc.nextLine();
+				manager = EmployeeController.login(id, password);
+				
+				if (manager != null) {
+					System.out.printf("%s님(%s), 로그인 되었습니다.\n", manager.getManagerName(), manager.getManagerId());
+				} else {
+					System.out.println("ID 또는 비밀번호가 맞지 않습니다. 다시 시도해주세요");
+				}
+				
 				break;
 			case 2:
 				break;
