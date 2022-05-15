@@ -1,10 +1,12 @@
 package service;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 import dao.EmployeeDao;
 import dao.EmployeeDaoImpl;
+import dto.Employee;
 import dto.Manager;
 
 public class EmployeeServiceImpl implements EmployeeService{
@@ -44,9 +46,52 @@ public class EmployeeServiceImpl implements EmployeeService{
 		}
 	}
 
+	//관리자등록
 	@Override
-	public int regist(Manager manager) throws SQLException {
+	public int managerRegist(Manager manager) throws SQLException {
 		return dao.insert(manager);
+	}
+
+	//관리자 삭제
+	@Override
+	public int managerResign(String managerId) throws SQLException {
+		return dao.delete(managerId);
+	}
+
+	//직원목록
+	@Override
+	public List<Employee> empList() throws SQLException {
+		return dao.empList();
+	}
+
+	//부서검색
+	@Override
+	public List<Employee> deptList(int deptNo) throws SQLException {
+		return dao.deptList(deptNo);
+	}
+
+	//직원검색
+	@Override
+	public List<Employee> empSelect(String empName) throws SQLException {
+		return dao.empSelect(empName);
+	}
+
+	//직원등록
+	@Override
+	public int empRegist(Employee emp) throws SQLException {
+		return dao.empInsert(emp);
+	}
+
+	//직원삭제
+	@Override
+	public int empResign(int empNo) throws SQLException {
+		return dao.empDelete(empNo);
+	}
+
+	//직원 정보수정
+	@Override
+	public int empUpdate(Employee emp) throws SQLException {
+		return dao.empUpdate(emp);
 	}
 
 }
