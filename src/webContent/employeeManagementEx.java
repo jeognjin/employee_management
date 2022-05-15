@@ -79,7 +79,7 @@ public class EmployeeManagementEx {
 			case 4: // 관리자 삭제
 				info = inputMasterInfo();
 				manager = EmployeeController.login(info);
-				if (manager != null) {
+				if (manager != null) {// 관리자 로그인 후 관자리 삭제 진행
 					System.out.println("관리자 확인 완료. 삭제할 ID를 입력해주세요.");
 					System.out.println("삭제할 ID 입력 >>> ");
 					String managerId = sc.nextLine();
@@ -134,7 +134,7 @@ public class EmployeeManagementEx {
 				int empNo = Integer.parseInt(sc.nextLine());
 				info = inputMasterInfo();
 				manager = EmployeeController.login(info);
-				if (manager != null) { // id, password가 일치하는 경우 직원등록 실행
+				if (manager != null) { // 관리자 로그인 후  직원등록 실행
 					System.out.println("관리자 확인 완료. 등록할 직원의 정보를 입력해주세요.");
 					emp = inputEmpInfo(empNo);
 					result = EmployeeController.empRegist(emp);
