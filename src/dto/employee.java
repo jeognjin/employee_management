@@ -2,6 +2,7 @@ package dto;
 
 public class Employee {
 
+	//field
 	private int empNo;
 	private String name;
 	private int departmentNo;
@@ -9,6 +10,7 @@ public class Employee {
 	private String position;
 	private int salary;
 	
+	//constructor
 	public Employee(int empNo, String name, int departmentNo, String departmentName, String position, int salary) {
 		super();
 		this.empNo = empNo;
@@ -19,6 +21,7 @@ public class Employee {
 		this.salary = salary;
 	}
 
+	//gettter & setter
 	public int getEmpNo() {
 		return empNo;
 	}

@@ -2,11 +2,13 @@ package dto;
 
 public class Manager {
 
+	//field
 	private String managerId;
 	private String managerPassword;
 	private String managerName;
-	private boolean loginCheck;
+	private boolean loginCheck; //관리자 로그인 여부 확인을 위해 boolean 사용
 	
+	//constructor
 	public Manager(String managerId, String managerPassword, String managerName, boolean loginCheck) {
 		super();
 		this.managerId = managerId;
@@ -15,6 +17,7 @@ public class Manager {
 		this.loginCheck = loginCheck;
 	}
 
+	//gettter & setter
 	public String getManagerId() {
 		return managerId;
 	}
