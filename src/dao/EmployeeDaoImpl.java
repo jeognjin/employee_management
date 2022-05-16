@@ -85,7 +85,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		List<Employee> employees = listUp(rs);
-		
+		System.out.println("dao >>>>>>> " + employees);
 		
 		return employees;
 	}
@@ -104,9 +104,9 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	//직원이름을 받아서 해당 직원 검색 후 arraylist로 반환
 	@Override
 	public List<Employee> empSelect(String empName) throws SQLException {
-		String sql = "select * from employee where department_name like ?";
+		String sql = "select * from employee where name like ?";
 		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, empName);
+		pstmt.setString(1,"%"+ empName + "%");
 		rs = pstmt.executeQuery();
 		List<Employee> employees = listUp(rs);
 		return employees;
@@ -115,7 +115,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	//ResultSet으로 받은 정보를 arraylist로 반환
 	private List<Employee> listUp(ResultSet rs2) throws SQLException {
 		List<Employee> employees = new ArrayList<Employee>();
-		if(rs.next()) {
+		while(rs.next()) {
 			int empNo = rs.getInt("emp_no");
 			String name = rs.getString("name");
 			int departmentNo = rs.getInt("department_no");

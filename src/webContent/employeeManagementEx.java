@@ -21,8 +21,6 @@ public class EmployeeManagementEx {
 		boolean run = true;
 		Employee emp = null;
 		Manager manager = null;
-		String id = "";
-		String password = "";
 		int result = 0;
 
 		while (run) {
